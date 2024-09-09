@@ -1,7 +1,3 @@
 # Reactor
-**C++实现Reactor高并发网络**
-
-day 1
-
-测试git
+**C++实现Reactor高并发网络服务器**
 

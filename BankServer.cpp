@@ -3,7 +3,6 @@
 BankServer::BankServer(const std::string &ip,const uint16_t port,int subthreadnum,int workthreadnum)
                    :tcpserver_(ip,port,subthreadnum),threadpool_(workthreadnum,"WORKS")
 {
-    // 以下代码不是必须的，业务关心什么事件，就指定相应的回调函数。
     tcpserver_.setnewconnectioncb(std::bind(&BankServer::HandleNewConnection, this, std::placeholders::_1));
     tcpserver_.setcloseconnectioncb(std::bind(&BankServer::HandleClose, this, std::placeholders::_1));
     tcpserver_.seterrorconnectioncb(std::bind(&BankServer::HandleError, this, std::placeholders::_1));
